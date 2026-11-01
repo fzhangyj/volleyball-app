@@ -1,0 +1,43 @@
+/* Shared visual tokens for H5, WeChat and App (Vue) pages. */
+page {
+  --color-bg: #f7f8f5;
+  --color-surface: #ffffff;
+  --color-ink: #202521;
+  --color-muted: #667068;
+  --color-line: #e5e9e2;
+  --color-accent: #b94b24;
+  --color-accent-soft: #fff0e8;
+  --shadow-card: 0 8rpx 28rpx rgba(29, 40, 31, 0.035);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+view, button, input, textarea, scroll-view { box-sizing: border-box; }
+button { font-family: inherit; }
+button::after { border: none; }
+button[disabled] { opacity: 0.55; }
+.page-heading { padding: 12rpx 0 36rpx; }
+.page-kicker { display: block; color: var(--color-accent); font-size: 21rpx; font-weight: 700; letter-spacing: 3rpx; margin-bottom: 12rpx; }
+.page-title { display: block; font-size: 48rpx; line-height: 1.25; font-weight: 750; letter-spacing: -1.5rpx; }
+.page-subtitle { display: block; color: var(--color-muted); font-size: 25rpx; margin-top: 14rpx; line-height: 1.7; }
+.ui-icon { width: 40rpx; height: 40rpx; flex-shrink: 0; }
+.ui-state { padding: 56rpx 32rpx; text-align: center; border: 1rpx dashed var(--color-line); border-radius: 24rpx; background: var(--color-surface); }
+.ui-state-icon { width: 64rpx; height: 64rpx; margin-bottom: 20rpx; }
+.ui-state-title { display: block; font-size: 29rpx; font-weight: 650; color: var(--color-ink); }
+.ui-state-desc { display: block; margin-top: 12rpx; font-size: 24rpx; color: var(--color-muted); line-height: 1.7; }
+.ui-state-action { display: inline-flex; align-items: center; justify-content: center; background: var(--color-accent-soft); color: var(--color-accent); font-size: 26rpx; border-radius: 16rpx; min-height: 80rpx; padding: 0 28rpx; margin-top: 24rpx; }
+.ui-skeleton { height: 176rpx; border-radius: 24rpx; background: #e9ece6; margin-bottom: 20rpx; animation: skeleton-pulse 1.5s ease-in-out infinite alternate; }
+@keyframes skeleton-pulse { to { opacity: 0.45; } }
+/* H5 keyboard feedback; native components keep their own focus behavior. */
+/* #ifdef H5 */
+html, body { background: #f7f8f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+button:focus-visible, [role='button']:focus-visible, a:focus-visible { outline: 3px solid #b94b24; outline-offset: 3px; }
+input:focus-visible, textarea:focus-visible { outline: 2px solid #b94b24; outline-offset: 2px; }
+uni-page-body { max-width: 960px; margin: 0 auto; min-height: calc(100vh - var(--window-top, 0px) - var(--window-bottom, 0px)); }
+uni-tabbar .uni-tabbar { border-top: 1px solid #e5e9e2; }
+/* #endif */
+@media (prefers-reduced-motion: reduce) {
+  view, text, image, button, view::before, view::after { animation: none !important; transition: none !important; }
+}

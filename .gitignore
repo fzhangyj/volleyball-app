@@ -1,0 +1,20 @@
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+__pycache__/
+node_modules/
+uploads/
+unpackage/
+.ui-work/
+
+# Local secrets and generated files
+*.pem
+*.key
+*.p12
+*.pfx
+.godot/
+*.sqlite*
+*.log
+dist/
